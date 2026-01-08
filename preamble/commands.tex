@@ -36,3 +36,22 @@
 
 % Information theory related commands
 \newcommand{\binentr}{\ensuremath{\mathscr{H}}}
+
+\newcommand{\term}[1]{{\sffamily #1}}
+
+% Explanation of equations deformations
+\newcommand{\Gg}[1]{%
+  \tcbox[
+    on line,
+    arc=1pt,        % ← 角丸の半径（好みで変更可）
+    % colback=yellow!20, % 背景色
+    colframe=red, % 枠線色
+    boxsep=0.5pt,
+    boxrule=0.5pt,
+    left=2pt,
+    right=2pt,
+    top=1pt,
+    bottom=1pt
+  ]{\scriptsize $#1$}%
+  \,{\color{red}\xrightarrow{\hspace{0.5cm}\;\hspace{0.5cm}}}%
+}

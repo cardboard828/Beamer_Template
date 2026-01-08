@@ -1,0 +1,42 @@
+\documentclass[aspectratio=43, unicode]{beamer}
+\usepackage[no-math,deluxe,ipaex]{luatexja-preset}
+\renewcommand{\kanjifamilydefault}{\gtdefault}% 既定をゴシック体に
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\setbeamertemplate{navigation symbols}{}% 右下のナビゲーションシンボルを消す
+\setbeamertemplate{footline}[page number]% フッター（下部）に ページ番号 を出す
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsectionnumber.\inserttocsubsectionnumber.~\inserttocsubsection\par}
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\usepackage{bm}
+\usepackage{subcaption}
+\makeatletter
+\newenvironment<>{myproof}[1][\proofname]{%
+  \par
+  \def\insertproofname{#1\@addpunct{.}}%
+  \pushQED{\qed}
+  {\textbf{\insertproofname}} \hspace*{\fill} \\}
+{\popQED}
+\makeatother
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{itemize items}[circle]
+\usepackage{import}
+\usepackage{braket}
+\subimport{preamble/}{commands.tex}
+\usepackage{mathtools} % \coloneqq, \eqqcolon など
+\setbeamertemplate{theorems}[normal font]% 定理環境中の英字の斜体を止める
+
+\title{ゆらぎの熱力学とパワー・効率トレードオフ関係}
+\author{C2SB2105 森佑一}
+\date{2026年1月10日}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\subimport{slides/}{tradeoff_current-entropy.tex}
+
+\end{document}
