@@ -1,0 +1,45 @@
+
+\section{パワーと効率のトレードオフ}
+
+\begin{frame}
+  {目次}
+   \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+  \frametitle{パワーと効率のトレードオフ}
+  \begin{theorem}[パワーと効率のトレードオフ]\label{thm:tradeoff_power-efficiency}
+    上で定義したnotationの下で
+    \begin{equation}
+      \frac{W}{\tau}\leq \bar{\Theta}^{(i)}\beta_L\eta (\eta_C-\eta), \quad \bar{\Theta}^{(i)}\coloneqq \frac{1}{\tau}\int_{0}^{\tau}\dd{t}\Theta(t)^{(i)}. 
+    \end{equation}
+  \end{theorem}
+  \begin{alertblock}{remark}
+    $\Theta^{(i)}$は経路に依存した量なので, 上の関係式で$\bar{\Theta}^{(i)}$を定数だと思ってパワーの上界を与える引数として効率をもつ二次関数を想起するのは危険である. 
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Thm.\ref{thm:tradeoff_power-efficiency}の導出}
+      先に以下のように不等式を示しておくと, 
+      \begin{align}
+        (Q_H+Q_L)^2&=\left( -\int_{0}^{\tau}\dd{t}J_{1}^{q}(t)+\int_{0}^{\tau}J_{2}^{q}(t) \right)^2\\
+        &\leq \left( \int_{0}^{\tau}\dd{t}\sum_{\nu}|J_{\nu}^{q}(t)| \right)^2\\
+        \Gg{\text{Thm.\ref{thm:tradeoff_current-entropy}, Thm.\ref{thm:tradeoff_current-entropy_detailed-balance}}}&\leq \left( \int_{0}^{\tau}\dd{t}\sqrt{\Theta^{(i)}\dot{\sigma}(t)} \right)^2\\
+        \Gg{\text{Cauchy-Schwarz}}&\leq \left( \int_{0}^{\tau}\dd{t}\Theta^{(i)}(t) \right)\cdot\left( \int_{0}^{\tau}\dd{t}\dot{\sigma}(t) \right)\\
+        &=\tau\bar{\Theta}\Delta{S}
+      \end{align}
+      あとは$W/\tau$を上から抑えれば, 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Thm.\ref{thm:tradeoff_power-efficiency}の導出（続き）}
+      \begin{align}
+        \frac{W}{\tau}&=\frac{Q_H\eta}{\tau}\cdot\frac{\beta_H Q_H-\beta_L Q_L}{\Delta S}\cdot\frac{\beta_L Q_H}{\beta_L Q_H}\\
+        &=\eta(\eta_C-\eta)\frac{\beta_L Q_H^2}{\tau\Delta S}\\
+        \Gg{上の不等式}&\leq \eta(\eta_C-\eta)\frac{\beta_L Q_H^2\bar{\Theta}}{(Q_H+Q_L)^2}\\
+        &\leq \eta(\eta_C-\eta)\beta_L\bar{\Theta}. 
+      \end{align}
+      となり, 示された. 
+\end{frame}
+

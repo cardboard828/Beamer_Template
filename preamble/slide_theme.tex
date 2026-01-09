@@ -1,0 +1,16 @@
+
+
+
+\usetheme[sectionpage=none]{moloch}% modern fork of the metropolis theme
+
+\setbeamercolor{block body}{bg=mDarkTeal!10}% theorem環境等のBoxの制御
+\setbeamercolor{block title}{bg=mDarkTeal!20,fg=black!}% theorem環境等のBoxの制御
+% \setbeamertemplate{blocks}[rounded][shadow=false]% 角を丸める（影なし）
+\setbeamertemplate{navigation symbols}{}% 右下のナビゲーションシンボルを消す
+\setbeamertemplate{footline}[page number]% フッター（下部）に ページ番号 を出す
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsectionnumber.\inserttocsubsectionnumber.~\inserttocsubsection\par}
+\setbeamertemplate{theorems}[numbered]% 定理環境に番号を振る
+\addtobeamertemplate{theorem begin}{\normalfont}{}% 定理環境の補足。Box内の英字の斜体を止める
+\setbeamertemplate{caption}[numbered]% 図に番号を振る
+\setbeamertemplate{itemize items}[circle]% itemizeの制御？

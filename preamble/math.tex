@@ -2,6 +2,7 @@
 \unimathsetup{math-style=ISO}
 
 \usepackage{amsmath}        % align etc.
+\usepackage{mathtools} % \coloneqq, \eqqcolon など
 
 \usepackage{braket}
 \usepackage{nicematrix}
@@ -16,7 +17,18 @@
 
 \usepackage{cancel}             % Cancel terms in equations
 
-\usepackage[many]{tcolorbox}      % Highlight equations
-\newcommand{\highlight}[1]{\ensuremath\tcbhighmath{#1}}
-
 \usepackage[version=4]{mhchem}
+\usepackage{bm}
+
+\usepackage{mathtools}%　参照した数式にのみ数式番号を振ろう(2023/10/6)
+\mathtoolsset{showonlyrefs=true}
+\numberwithin{equation}{section}
+
+\makeatletter % 自分のproof環境
+\newenvironment<>{myproof}[1][\proofname]{%
+  \par
+  \def\insertproofname{#1\@addpunct{.}}%
+  \pushQED{\qed}
+  {\textbf{\insertproofname}} \hspace*{\fill} \\}
+{\popQED}
+\makeatother
